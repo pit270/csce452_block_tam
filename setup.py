@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'block_tam = block_tam.block_tam:main',
         ],
     },
 )

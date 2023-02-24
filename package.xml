@@ -3,7 +3,7 @@
 <package format="3">
   <name>block_tam</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Use Turtle to draw block TAM</description>
   <maintainer email="weeks@todo.todo">weeks</maintainer>
   <license>TODO: License declaration</license>
 
@@ -11,6 +11,9 @@
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
   <test_depend>python3-pytest</test_depend>
+
+  <depend>geometry_msgs</depend>
+  <depend>rlcpy</depend>
 
   <export>
     <build_type>ament_python</build_type>
