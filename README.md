@@ -10,5 +10,7 @@
 1. Run the following commands
 
 `colcon build --packages-select block_tam`
+
 `. install/setup.bash`
+
 `ros2 run block_tam block_tam`
