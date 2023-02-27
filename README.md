@@ -7,7 +7,7 @@
 
 # Building and running
 
-1. Run the following commands
+1. Run the following commands from ros_ws directory
 
 `colcon build --packages-select block_tam`
 
