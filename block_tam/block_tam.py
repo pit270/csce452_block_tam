@@ -7,13 +7,21 @@ from rcl_interfaces.msg import ParameterValue
 from rcl_interfaces.srv import SetParameters
 
 from geometry_msgs.msg import Twist
+from std_srvs.srv import Empty
 from turtlesim.msg import Color
 from turtlesim.srv import SetPen
 
 class TurtleClient(Node):
     def __init__(self):
         super().__init__('turtle_client')
-        self.param_client = self.create_client(SetParameters, 'turtlesim/set_parameters')
+
+        #Defining clients for the services
+        self.clear_client = self.create_client(Empty, '/clear')
+        while not self.clear_client.wait_for_service(timeout_sec=1.0):
+            print("turtle clear param service not yet availible...")
+        self.clear_request = Empty.Request()
+
+        self.param_client = self.create_client(SetParameters, '/turtlesim/set_parameters')
         while not self.param_client.wait_for_service(timeout_sec=1.0):
             print("turtle set param service not yet availible...")
         self.param_request = SetParameters.Request()
@@ -23,6 +31,10 @@ class TurtleClient(Node):
             print("turtle pen service not yet availible...")
         self.pen_request = SetPen.Request()
         self.pen_request.width = 2
+
+    def make_clear(self):
+        self.future = self.clear_client.call_async(self.clear_request)
+        return self.future.result()
 
     def set_color(self, r, g, b):
         self.param_request.parameters = [
@@ -64,9 +76,14 @@ def main():
     tam_node = rclpy.create_node('block_tam_pub')
     vel_pub = tam_node.create_publisher(Twist, '/turtle1/cmd_vel', 10)
 
-    #Background to Maroon
+
     client = TurtleClient()
+    #Clear existing drawings
+    client.make_clear()
+
+    #Background to Maroon
     client.set_color(80, 0, 0)
+    
     #Set pen color to White
     client.set_pen_color(255, 255, 255)
 
