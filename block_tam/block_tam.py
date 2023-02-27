@@ -95,7 +95,6 @@ def moveDistance(vel_pub, dist):
     duration = abs(dist / VELOCITY)
     time_elapsed = 0
     while time_elapsed < duration:
-        print(duration, time_elapsed)
         vel_pub.publish(MOVE_MSG)
         sleep(PERIOD)
         time_elapsed += PERIOD
@@ -134,6 +133,79 @@ def drawA(vel_pub):
 
 def drawM(vel_pub):
     #TODO: Draw a Block M
+    turnAngle(vel_pub, PI/2)
+
+    moveDistance(vel_pub, .56204)
+    turnAngle(vel_pub, -PI/2)
+
+    moveDistance(vel_pub,.20073)
+    turnAngle(vel_pub, PI/2)
+
+    moveDistance(vel_pub, 1.7263)
+    turnAngle(vel_pub, PI/2)
+
+    moveDistance(vel_pub, .20073)
+    turnAngle(vel_pub, -PI/2)
+
+    moveDistance(vel_pub, .56204)
+    turnAngle(vel_pub, -PI/2)
+
+    moveDistance(vel_pub, .88321)
+    turnAngle(vel_pub, -1.107)
+
+    moveDistance(vel_pub, 1.3465)
+    turnAngle(vel_pub, 2.214)
+
+    moveDistance(vel_pub, 1.3465)
+    turnAngle(vel_pub, -1.107)
+
+    moveDistance(vel_pub, .88321)
+    turnAngle(vel_pub, -PI/2)
+
+    moveDistance(vel_pub, 0.56204)
+    turnAngle(vel_pub, -PI/2)
+
+    moveDistance(vel_pub, .20073)
+    turnAngle(vel_pub, PI/2)
+
+    moveDistance(vel_pub, 1.7263)
+    turnAngle(vel_pub, PI/2)
+
+    moveDistance(vel_pub, .20073)
+    turnAngle(vel_pub, -PI/2)
+
+    moveDistance(vel_pub, .56204)
+    turnAngle(vel_pub, -PI/2)
+
+    moveDistance(vel_pub, 1.0237)
+    turnAngle(vel_pub, -PI/2)
+
+    moveDistance(vel_pub, .56204)
+    turnAngle(vel_pub, -PI/2)
+
+    moveDistance(vel_pub, .20074)
+    turnAngle(vel_pub, PI/2)
+
+    moveDistance(vel_pub, 1.2044)
+    turnAngle(vel_pub, 2.6012)
+
+    moveDistance(vel_pub, 1.4045)
+    turnAngle(vel_pub, -2.06078)
+
+    moveDistance(vel_pub, 1.4045)
+    turnAngle(vel_pub, 2.6012)
+
+    moveDistance(vel_pub, 1.2044)
+    turnAngle(vel_pub, PI/2)
+
+    moveDistance(vel_pub, .20073)
+    turnAngle(vel_pub, -PI/2)
+
+    moveDistance(vel_pub, .56204)
+    turnAngle(vel_pub, -PI/2)
+
+    moveDistance(vel_pub, 1.0237)
+    
     pass #remove this line when you develop this function
 
 def main():
@@ -152,24 +224,9 @@ def main():
     #Set pen color to White
     client.set_pen_color(255, 255, 255)
 
-    # test code. Remove this when writing your code
-    # vel_msg = Twist()
-    # vel_msg.linear.x = VELOCITY
-    # vel_msg.linear.y = 0.0
-    # vel_msg.linear.z = 0.0
-    # vel_msg.angular.y = 0.0
-    # vel_msg.angular.z = 0.0
-    # vel_msg.angular.z = 0.0
-    # t = 0
-    # while(t < 1):
-    #     vel_pub.publish(vel_msg)
-    #     t += PERIOD
-    #     sleep(PERIOD)
-
-
     drawT(vel_pub)
     #TODO: transistion from T to A
-    drawA(vel_pub)
+    #drawA(vel_pub)
     #TODO: transistion from A to M
     drawM(vel_pub)
     #TODO: move away from drawing
