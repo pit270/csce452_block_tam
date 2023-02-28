@@ -117,7 +117,7 @@ def turnAngle(vel_pub, angle):
 
 def drawT(vel_pub):
     #TODO: Draw a Block T
-    
+
     pass #remove this line when you develop this function
 
 def drawA(vel_pub, client):
@@ -296,11 +296,11 @@ def main():
 
     #TODO: transistion from T to A
 
-    #drawA(vel_pub, client)
+    drawA(vel_pub, client)
 
     #TODO: transistion from A to M
     
-    drawM(vel_pub)
+    #drawM(vel_pub)
 
     # move away from drawing
     client.set_pen_state(True)
