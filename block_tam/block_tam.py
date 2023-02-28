@@ -14,7 +14,7 @@ from turtlesim.srv import SetPen
 from time import sleep
 from copy import deepcopy
 
-PI = 3.14159265359
+PI = 3.141592654
 
 class TurtleClient(Node):
     def __init__(self):
@@ -63,7 +63,7 @@ class TurtleClient(Node):
         return self.future.result()
 
 VELOCITY = 0.5 # ??? / sec
-ANG_VEL = PI / 4
+ANG_VEL = PI/2
 UPDATE_RATE = 20 #HZ
 PERIOD = 1 / UPDATE_RATE
 
@@ -117,6 +117,7 @@ def turnAngle(vel_pub, angle):
 
 def drawT(vel_pub):
     #TODO: Draw a Block T
+    
     pass #remove this line when you develop this function
 
 def drawA(vel_pub, client):
@@ -184,24 +185,29 @@ def drawA(vel_pub, client):
     turnAngle(vel_pub, -(angle2-0.05))
     moveDistance(vel_pub, 0.4416)
 
+    pass
+
 def drawM(vel_pub):
     #TODO: Draw a Block M
+
+    #Defining common angles
+    M_rightAngle = PI/2
     turnAngle(vel_pub, PI/2)
 
     moveDistance(vel_pub, .56204)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, -M_rightAngle)
 
     moveDistance(vel_pub,.20073)
-    turnAngle(vel_pub, PI/2)
+    turnAngle(vel_pub, M_rightAngle)
 
     moveDistance(vel_pub, 1.7263)
-    turnAngle(vel_pub, PI/2)
+    turnAngle(vel_pub, M_rightAngle)
 
     moveDistance(vel_pub, .20073)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, -M_rightAngle)
 
     moveDistance(vel_pub, .56204)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, -M_rightAngle)
 
     moveDistance(vel_pub, .88321)
     turnAngle(vel_pub, -1.107)
@@ -213,31 +219,31 @@ def drawM(vel_pub):
     turnAngle(vel_pub, -1.107)
 
     moveDistance(vel_pub, .88321)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, -M_rightAngle)
 
     moveDistance(vel_pub, 0.56204)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, -M_rightAngle)
 
     moveDistance(vel_pub, .20073)
-    turnAngle(vel_pub, PI/2)
+    turnAngle(vel_pub, M_rightAngle)
 
     moveDistance(vel_pub, 1.7263)
-    turnAngle(vel_pub, PI/2)
+    turnAngle(vel_pub, M_rightAngle)
 
     moveDistance(vel_pub, .20073)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, -M_rightAngle)
 
     moveDistance(vel_pub, .56204)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, -M_rightAngle)
 
     moveDistance(vel_pub, 1.0237)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, -M_rightAngle)
 
     moveDistance(vel_pub, .56204)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, -M_rightAngle)
 
     moveDistance(vel_pub, .20074)
-    turnAngle(vel_pub, PI/2)
+    turnAngle(vel_pub, M_rightAngle)
 
     moveDistance(vel_pub, 1.2044)
     turnAngle(vel_pub, 2.6012)
@@ -249,13 +255,13 @@ def drawM(vel_pub):
     turnAngle(vel_pub, 2.6012)
 
     moveDistance(vel_pub, 1.2044)
-    turnAngle(vel_pub, PI/2)
+    turnAngle(vel_pub, M_rightAngle)
 
     moveDistance(vel_pub, .20073)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, -M_rightAngle)
 
     moveDistance(vel_pub, .56204)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, -M_rightAngle)
 
     moveDistance(vel_pub, 1.0237)
     
@@ -286,11 +292,11 @@ def main():
     turnAngle(vel_pub, PI)
     client.set_pen_state(False)
 
-    drawT(vel_pub)
+    #drawT(vel_pub)
 
     #TODO: transistion from T to A
 
-    drawA(vel_pub, client)
+    #drawA(vel_pub, client)
 
     #TODO: transistion from A to M
     
