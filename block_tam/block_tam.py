@@ -299,12 +299,6 @@ def main():
     client.set_pen_state(False)
 
     drawA(vel_pub, client)
-<<<<<<< HEAD
-
-    #TODO: transistion from A to M
-    
-    #drawM(vel_pub)
-=======
 
     #transistion from A to M
     client.set_pen_state(True)
@@ -316,7 +310,6 @@ def main():
     client.set_pen_state(False)
 
     drawM(vel_pub)
->>>>>>> 78b8fde583e35825e13a3e6019f6473edf689ab2
 
     # move away from drawing
     client.set_pen_state(True)
