@@ -62,8 +62,8 @@ class TurtleClient(Node):
         self.future = self.pen_client.call_async(self.pen_request)
         return self.future.result()
 
-VELOCITY = 0.5 # ??? / sec
-ANG_VEL = PI/2
+VELOCITY = 1.25 # ??? / sec
+ANG_VEL = PI / 3
 UPDATE_RATE = 20 #HZ
 PERIOD = 1 / UPDATE_RATE
 
@@ -117,8 +117,7 @@ def turnAngle(vel_pub, angle):
 
 def drawT(vel_pub):
     #TODO: Draw a Block T
-
-    pass #remove this line when you develop this function
+    pass
 
 def drawA(vel_pub, client):
     #TODO: Draw a Block A
@@ -185,14 +184,11 @@ def drawA(vel_pub, client):
     turnAngle(vel_pub, -(angle2-0.05))
     moveDistance(vel_pub, 0.4416)
 
-    pass
-
 def drawM(vel_pub):
     #TODO: Draw a Block M
 
     #Defining common angles
     M_rightAngle = PI/2
-    turnAngle(vel_pub, PI/2)
 
     moveDistance(vel_pub, .56204)
     turnAngle(vel_pub, -M_rightAngle)
@@ -216,7 +212,7 @@ def drawM(vel_pub):
     turnAngle(vel_pub, 2.214)
 
     moveDistance(vel_pub, 1.3465)
-    turnAngle(vel_pub, -1.107)
+    turnAngle(vel_pub, -(1.107 - 0.05))
 
     moveDistance(vel_pub, .88321)
     turnAngle(vel_pub, -M_rightAngle)
@@ -285,25 +281,46 @@ def main():
 
     #move from (5.5,5.5,0) to T starting positon (4.135, 2.148, PI/2)
     client.set_pen_state(True)
-    turnAngle(vel_pub, PI)
+    turnAngle(vel_pub, PI-0.06)
     moveDistance(vel_pub, 5.5-4.13503649635)
-    turnAngle(vel_pub, PI/4)
+    turnAngle(vel_pub, PI/2)
     moveDistance(vel_pub, 5.5-2.14781021898)
-    turnAngle(vel_pub, PI)
+    turnAngle(vel_pub, PI-0.06)
     client.set_pen_state(False)
 
-    #drawT(vel_pub)
+    drawT(vel_pub)
 
-    #TODO: transistion from T to A
+    #transistion from T to A
+    client.set_pen_state(True)
+    moveDistance(vel_pub, 1.50583941606)
+    turnAngle(vel_pub, PI/2)
+    moveDistance(vel_pub, 2.77299270073)
+    turnAngle(vel_pub, -PI/2)
+    client.set_pen_state(False)
 
     drawA(vel_pub, client)
+<<<<<<< HEAD
 
     #TODO: transistion from A to M
     
     #drawM(vel_pub)
+=======
+
+    #transistion from A to M
+    client.set_pen_state(True)
+    turnAngle(vel_pub, PI)
+    moveDistance(vel_pub, 4.15364963504)
+    turnAngle(vel_pub, -PI/2)
+    moveDistance(vel_pub, 1.12518248175)
+    turnAngle(vel_pub, PI-0.1)
+    client.set_pen_state(False)
+
+    drawM(vel_pub)
+>>>>>>> 78b8fde583e35825e13a3e6019f6473edf689ab2
 
     # move away from drawing
     client.set_pen_state(True)
+    VELOCITY = 10
     moveDistance(vel_pub, 10)
 
 if __name__ == '__main__':
