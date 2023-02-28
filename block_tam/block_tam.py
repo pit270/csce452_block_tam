@@ -117,10 +117,11 @@ def turnAngle(vel_pub, angle):
 
 def drawT(vel_pub):
     def drawT(vel_pub):
-    #start from the bottom left of T
+    #TODO: Draw a Block T
+    #start from the bottom left of T facing up
     #step 1
     moveDistance(vel_pub, 1.22446)
-    turnAngle(vel_pub, PI/2)
+    turnAngle(vel_pub, 0)
     #step 2
     moveDistance(vel_pub, 0.68278)
     turnAngle(vel_pub, -PI/2)
@@ -129,40 +130,40 @@ def drawT(vel_pub):
     turnAngle(vel_pub, PI/2)
     #step 4
     moveDistance(vel_pub, 1.28467)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, PI/2)
     #step 5
     moveDistance(vel_pub, 0.70255)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, PI/2)
     #step 6
     moveDistance(vel_pub, 1.26459)
     turnAngle(vel_pub, -PI/2)
     #step 7
     moveDistance(vel_pub, 1.82664)
-    turnAngle(vel_pub, PI/2)
+    turnAngle(vel_pub, -PI/2)
     #step 8
     moveDistance(vel_pub, 6.32299)
-    turnAngle(vel_pub, PI/2)
+    turnAngle(vel_pub, -PI/2)
     #step 9
     moveDistance(vel_pub, 1.82664)
-    turnAngle(vel_pub, PI/2)
+    turnAngle(vel_pub, -PI/2)
     #step 10
     moveDistance(vel_pub, 1.22445)
     turnAngle(vel_pub, -PI/2)
     #step 11
     moveDistance(vel_pub,0.70255)
-    turnAngle(vel_pub, PI/2)
+    turnAngle(vel_pub, -PI/2)
     #step 12
     moveDistance(vel_pub, 1.28467)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, PI/2)
     #step 13
     moveDistance(vel_pub, 4.31569)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, PI/2)
     #step 14
     moveDistance(vel_pub, 0.68248)
-    turnAngle(vel_pub, -PI/2)
+    turnAngle(vel_pub, PI/2)
     #step 15
     moveDistance(vel_pub, 1.24452)
-    turnAngle(vel_pub, 0)
+    turnAngle(vel_pub, -PI/2)
 
 def drawA(vel_pub, client):
     #assume starting in bottom left corner facing up
