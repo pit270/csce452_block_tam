@@ -117,53 +117,7 @@ def turnAngle(vel_pub, angle):
 
 def drawT(vel_pub):
     #TODO: Draw a Block T
-    moveDistance(vel_pub, 1.224453)
-    turnAngle(vel_pub, -PI/2)
-
-    moveDistance(vel_pub, .68248)
-    turnAngle(vel_pub, PI/2)
-
-    moveDistance(vel_pub, 4.29562)
-    turnAngle(vel_pub, PI/2)
-
-    moveDistance(vel_pub, 1.28467)
-    turnAngle(vel_pub, PI/2)
-
-    moveDistance(vel_pub, .68248)
-    turnAngle(vel_pub, -PI/2)
-
-    moveDistance(vel_pub, 1.2043796)
-    turnAngle(vel_pub, -PI/2)
-
-    moveDistance(vel_pub, 1.7864964)
-    turnAngle(vel_pub, -(PI/2 - 0.07))
-
-    moveDistance(vel_pub, 6.2828467)
-    turnAngle(vel_pub, -(PI/2 - 0.065))
-
-    moveDistance(vel_pub, 1.7864964)
-    turnAngle(vel_pub, -PI/2)
-
-    moveDistance(vel_pub, 1.2043796)
-    turnAngle(vel_pub, -PI/2)
-
-    moveDistance(vel_pub, .682482)
-    turnAngle(vel_pub, PI/2)
-
-    moveDistance(vel_pub, 1.28467)
-    turnAngle(vel_pub, PI/2 - 0.07)
-
-    moveDistance(vel_pub, 4.29562)
-    turnAngle(vel_pub, PI/2)
-
-    moveDistance(vel_pub, .68248)
-    turnAngle(vel_pub, -PI/2)
-
-    moveDistance(vel_pub, 1.224453)
-    turnAngle(vel_pub, -(PI/2 - 0.09))
-
-    moveDistance(vel_pub, 2.589416)
-    turnAngle(vel_pub, -PI/2)
+    pass
 
 def drawA(vel_pub, client):
     #TODO: Draw a Block A
@@ -230,14 +184,11 @@ def drawA(vel_pub, client):
     turnAngle(vel_pub, -(angle2-0.05))
     moveDistance(vel_pub, 0.4416)
 
-    pass
-
 def drawM(vel_pub):
     #TODO: Draw a Block M
 
     #Defining common angles
     M_rightAngle = PI/2
-    turnAngle(vel_pub, PI/2)
 
     moveDistance(vel_pub, .56204)
     turnAngle(vel_pub, -M_rightAngle)
