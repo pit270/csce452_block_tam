@@ -116,11 +116,55 @@ def turnAngle(vel_pub, angle):
     sleep(PERIOD)
 
 def drawT(vel_pub):
-    #TODO: Draw a Block T
-    pass
+    def drawT(vel_pub):
+    #start from the bottom left of T
+    #step 1
+    moveDistance(vel_pub, 1.22446)
+    turnAngle(vel_pub, PI/2)
+    #step 2
+    moveDistance(vel_pub, 0.68278)
+    turnAngle(vel_pub, -PI/2)
+    #step 3
+    moveDistance(vel_pub, 4.31569 )
+    turnAngle(vel_pub, PI/2)
+    #step 4
+    moveDistance(vel_pub, 1.28467)
+    turnAngle(vel_pub, -PI/2)
+    #step 5
+    moveDistance(vel_pub, 0.70255)
+    turnAngle(vel_pub, -PI/2)
+    #step 6
+    moveDistance(vel_pub, 1.26459)
+    turnAngle(vel_pub, -PI/2)
+    #step 7
+    moveDistance(vel_pub, 1.82664)
+    turnAngle(vel_pub, PI/2)
+    #step 8
+    moveDistance(vel_pub, 6.32299)
+    turnAngle(vel_pub, PI/2)
+    #step 9
+    moveDistance(vel_pub, 1.82664)
+    turnAngle(vel_pub, PI/2)
+    #step 10
+    moveDistance(vel_pub, 1.22445)
+    turnAngle(vel_pub, -PI/2)
+    #step 11
+    moveDistance(vel_pub,0.70255)
+    turnAngle(vel_pub, PI/2)
+    #step 12
+    moveDistance(vel_pub, 1.28467)
+    turnAngle(vel_pub, -PI/2)
+    #step 13
+    moveDistance(vel_pub, 4.31569)
+    turnAngle(vel_pub, -PI/2)
+    #step 14
+    moveDistance(vel_pub, 0.68248)
+    turnAngle(vel_pub, -PI/2)
+    #step 15
+    moveDistance(vel_pub, 1.24452)
+    turnAngle(vel_pub, 0)
 
 def drawA(vel_pub, client):
-    #TODO: Draw a Block A
     #assume starting in bottom left corner facing up
 
     # define common angles for ease of use
@@ -185,11 +229,10 @@ def drawA(vel_pub, client):
     moveDistance(vel_pub, 0.4416)
 
 def drawM(vel_pub):
-    #TODO: Draw a Block M
-
     #Defining common angles
     M_rightAngle = PI/2
 
+    #Begin drawing M
     moveDistance(vel_pub, .56204)
     turnAngle(vel_pub, -M_rightAngle)
 
@@ -260,16 +303,13 @@ def drawM(vel_pub):
     turnAngle(vel_pub, -M_rightAngle)
 
     moveDistance(vel_pub, 1.0237)
-    
-    pass #remove this line when you develop this function
 
 def main():
     rclpy.init()
     tam_node = rclpy.create_node('block_tam_pub')
     vel_pub = tam_node.create_publisher(Twist, '/turtle1/cmd_vel', 10)
-
-
     client = TurtleClient()
+
     #Clear existing drawings
     client.make_clear()
 
